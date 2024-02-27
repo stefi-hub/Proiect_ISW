@@ -1,6 +1,8 @@
 # Proiect_ISW
 Proiect Inginerie Soft
 
+Nume proiect: Music Shop
+Descriere: Magazin online de instrumente muzicale de unde poti accesa diferite modele de instrumente, accesorii, tutoriale si harta principalelor magazine fizice.
 
 Echipa este formata din:
   -Serban Emanuel: Backend
@@ -10,8 +12,7 @@ Echipa este formata din:
 Vom lucra in AGILE.
 
 Tehnologii alese:
-  -mongol DB
-  -React
-  -Angular (frontend)
+  -mongol DB (database)
+  -HTML, CSS, JavaScript (frontend)
   -Fast API (backend)
-  -Jira
+  -Jira (team planning)
