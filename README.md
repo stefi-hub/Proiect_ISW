@@ -13,6 +13,6 @@ Vom lucra in AGILE.
 
 Tehnologii alese:
   -mongol DB (database)
-  -HTML, CSS, JavaScript (frontend)
+  -HTML, CSS, JavaScript,PHP (frontend)
   -Fast API (backend)
   -Jira (team planning)
