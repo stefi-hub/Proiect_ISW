@@ -1,0 +1,30 @@
+/* Homepage.css */
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar, .navbar, .slideshow-container, .content, .newsletter-section, .social-media {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #000; /* Temporary border for layout visualization */
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    border: 1px solid #000;
+}

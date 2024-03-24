@@ -1,0 +1,84 @@
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Adjust the colors as per your image */
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.85); /* Slightly transparent white */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px; /* More pronounced rounding */
+  backdrop-filter: blur(10px); /* Creates a frosted glass effect */
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label,
+.login-form input,
+.login-form button {
+  margin-bottom: 10px;
+}
+
+.login-form input {
+  padding: 15px;
+  border: 1px solid transparent; /* remove the default border */
+  border-bottom: 2px solid #ddd; /* just a bottom border */
+  border-radius: 0; /* no border radius */
+  background: transparent;
+  color: #fff; /* white text color */
+}
+
+.login-form button {
+  padding: 15px;
+  background-color: #4dabf7; /* lighter shade for the button */
+  color: #fff; /* white text */
+  /* ... other styles remain the same */
+}
+
+.login-form button:hover {
+  background-color: #0056b3; /* fallback for non-overlay */
+}
+
+.register-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-section span {
+  margin-right: 10px;
+  font-size: 0.9em;
+}
+
+.register-button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.register-button:hover {
+  background-color: #0056b3; /* A darker shade for the hover state */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('background.jpg') no-repeat center center;
+  background-size: cover;
+}
