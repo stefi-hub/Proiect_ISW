@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Login = () => {
+const Login = ({ onLogin }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -9,16 +9,21 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8000/login/', {
-                username,
-                password
+            const response = await axios.post('http://localhost:8888/login/', {
+                username: username,
+                password: password
             });
             localStorage.setItem('token', response.data.access_token);
-            // Redirect or perform any other action upon successful login
+            window.location.href = '/homepage'; // Manually trigger redirection
         } catch (error) {
-            setError('Invalid username or password');
+            if (error.response && error.response.status === 401) {
+                setError('Invalid username or password');
+            } else {
+                setError('An unexpected error occurred. Please try again later.');
+            }
         }
     };
+
 
     return (
         <div>

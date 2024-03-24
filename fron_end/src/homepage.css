@@ -1,0 +1,40 @@
+.homepage {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "navbar navbar cart"
+    "slideshow slideshow slideshow"
+    "best-sellers best-sellers best-sellers"
+    "our-products our-products sidebar"
+    "whats-new whats-new sidebar"
+    "footer footer footer";
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-grid {
+  display: flex;
+}
+
+.product {
+  /* Style your product div here */
+}
+
+.newsletter, .pictures {
+  /* Style your newsletter and pictures div here */
+}
+
+.social-media-icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Add more styles as needed */

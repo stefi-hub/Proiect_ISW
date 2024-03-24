@@ -9,11 +9,34 @@ from typing import Annotated
 import models
 from database import SessionLocal, engine
 from passlib.hash import bcrypt
+from fastapi.middleware.cors import CORSMiddleware
 
 security = HTTPBearer()
 
 app = FastAPI()
 models.Base.metadata.create_all(bind=engine)
+
+origins = [
+    "http://localhost",
+    "http://localhost:3000",  # Add your frontend URL here
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["*"],
+)
+
+# OPTIONS route to handle preflight requests
+@app.options("/{path:path}")
+async def options_handler(request, path):
+    return {}
+
+class UserLogin(BaseModel):
+    username: str
+    password: str
 
 class PostBase(BaseModel):
     title: str
@@ -37,9 +60,10 @@ def hash_password(password: str):
 
 def authenticate_user(db: Session, username: str, password: str):
     user = db.query(models.User).filter(models.User.username == username).first()
-    if not user or not pwd_context.verify(password, user.password_hash):
+    if not user or not pwd_context.verify(password, user.password):
         return None
     return user
+
 
 def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security), db: Session = Depends(get_db)):
     token = credentials.credentials
@@ -67,8 +91,8 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 router = APIRouter()
 
 @router.post("/login/", status_code=status.HTTP_200_OK)
-async def login(username: str, password: str, db: db_dependency):
-    user = authenticate_user(db, username, password)
+async def login(user_login: UserLogin, db: db_dependency):
+    user = authenticate_user(db, user_login.username, user_login.password)
     if not user:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Incorrect username or password")
 
@@ -78,7 +102,7 @@ async def login(username: str, password: str, db: db_dependency):
 
 @app.options("/login/")
 async def options_login():
-    return {"Allow": "POST"}
+    return {"Allow": "POST, OPTIONS"}
 
 @app.post("/posts/", status_code=status.HTTP_201_CREATED)
 async def create_post(post: PostBase, db: db_dependency):
@@ -117,3 +141,6 @@ async def root():
 @app.get("/hello/{name}")
 async def say_hello(name: str):
     return {"message": f"Hello {name}"}
+
+# Include the router in the main app
+app.include_router(router)
