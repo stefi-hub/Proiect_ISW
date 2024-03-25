@@ -1,30 +1,155 @@
-/* Homepage.css */
-
 .homepage {
   display: flex;
   flex-direction: column;
+  font-family: 'Arial', sans-serif;
 }
 
-.top-bar, .navbar, .slideshow-container, .content, .newsletter-section, .social-media {
-  margin: 10px;
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
-  border: 1px solid #000; /* Temporary border for layout visualization */
+  background-color: #f4f4f4;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
 }
 
 .nav-links {
-  list-style-type: none;
+  list-style: none;
   display: flex;
-  justify-content: space-between;
+}
+
+.nav-links li {
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.nav-links li:hover {
+  text-decoration: underline;
+}
+
+.logout-button {
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+overflow: hidden;
+}
+
+.slide {
+display: none;
+}
+
+.slide.fade {
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@keyframes fade {
+from {opacity: .4}
+to {opacity: 1}
+}
+
+.content {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+margin-top: 20px;
+}
+
+.best-sellers-section,
+.our-products-section,
+.whats-new-section {
+width: 100%;
+margin-bottom: 20px;
+}
+
+.best-sellers-section h2,
+.our-products-section h2,
+.whats-new-section h2 {
+margin-left: 10px;
 }
 
 .items {
-  display: flex;
-  justify-content: space-between;
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
 }
 
 .item {
-    width: 150px;
-    height: 150px;
-    margin: 10px;
-    border: 1px solid #000;
+width: calc(33.333% - 20px);
+margin: 10px;
+text-align: center;
+}
+
+.item-image {
+width: 100%;
+height: auto;
+background-color: #ddd;
+margin-bottom: 10px;
+}
+
+.item-price {
+margin-bottom: 10px;
+}
+
+.newsletter-section {
+display: flex;
+justify-content: space-between;
+padding: 20px;
+background-color: #f4f4f4;
+}
+
+.newsletter-section .newsletter,
+.newsletter-section .pictures {
+flex: 1;
+margin: 0 10px;
+}
+
+.social-media {
+text-align: center;
+padding: 10px;
+background-color: #fff;
+}
+
+.social-media span {
+padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+.navbar,
+.content,
+.newsletter-section {
+flex-direction: column;
+}
+
+.nav-links {
+flex-direction: column;
+align-items: center;
+}
+
+.nav-links li {
+width: 100%;
+text-align: center;
+}
+
+.item {
+width: calc(50% - 20px);
+}
+}
+
+@media (max-width: 480px) {
+.item {
+width: 100%;
+}
 }
