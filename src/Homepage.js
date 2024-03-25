@@ -1,12 +1,17 @@
 import React from 'react';
 import './Homepage.css';
+import logoIcon from './p1.jpg';
+import cartIcon from './p1.jpg';
+import slideShowImage1 from './p1.jpg';
+import slideShowImage2 from './p2.jpg';
+import slideShowImage3 from './p3.jpg';
 
 const Homepage = ({ logout }) => {
   return (
     <div className="homepage">
       <div className="top-bar">
         <span className="contact">CONTACT</span>
-        <div className="logo">LOGO ICON</div>
+        <img src={logoIcon} alt="Logo" className="logo" />
         <button onClick={logout} className="logout-button">LOGOUT</button>
       </div>
 
@@ -19,58 +24,40 @@ const Homepage = ({ logout }) => {
           <li>ABOUT-US</li>
           <li>CONTACT-US</li>
         </ul>
-        <div className="cart-icon">SHOPPING CART ICON</div>
+        <img src={cartIcon} alt="Shopping Cart" className="cart-icon" />
       </div>
 
       <div className="slideshow-container">
-        CHANGING COMMERCIAL (SLIDE SHOW OFFERS)
+        {}
+        <div className="slide fade">
+          <img src={slideShowImage1} alt="Offer 1" />
+        </div>
+        <div className="slide fade">
+          <img src={slideShowImage2} alt="Offer 2" />
+        </div>
+        <div className="slide fade">
+          <img src={slideShowImage3} alt="Offer 3" />
+        </div>
       </div>
 
       <div className="content">
-        <div className="best-sellers-section">
-          <h2>BEST SELLERS</h2>
-          <div className="items">
-            {/* Repeat this structure for each best-seller item */}
-            <div className="item">
-              <div className="item-image">IMAGE</div>
-              <div className="item-price">PRICE</div>
-            </div>
-            {/* ... */}
-          </div>
-        </div>
+        {}
 
-        <div className="our-products-section">
-          <h2>OUR PRODUCTS</h2>
-          <div className="items">
-            {/* Repeat this structure for each product item */}
-            <div className="item">
-              <div className="item-image">IMAGE</div>
-            </div>
-            {/* ... */}
-          </div>
-        </div>
+        {}
 
-        <div className="whats-new-section">
-          <h2>WHAT'S NEW</h2>
-          <div className="items">
-            {/* Repeat this structure for each new item */}
-            <div className="item">
-              <div className="item-image">IMAGE</div>
-            </div>
-            {/* ... */}
-          </div>
-        </div>
+        {}
       </div>
 
       <div className="newsletter-section">
-        <div className="newsletter">Newsletter</div>
-        <div className="pictures">PICTURES</div>
+        <div className="newsletter">Subscribe to our Newsletter</div>
+        <div className="pictures">Featured Images</div>
       </div>
 
       <div className="social-media">
-        <span>TWITTER ICON</span>
-        <span>INSTAGRAM ICON</span>
-        <span>FACEBOOK ICON</span>
+        {}
+        <span>Twitter</span>
+        <span>Instagram</span>
+        <span>Facebook</span>
       </div>
     </div>
   );
