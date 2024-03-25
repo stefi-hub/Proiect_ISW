@@ -1,46 +1,59 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Login.css';
 
-const Login = ({ onLogin, onShowRegister }) => {
+const Login = ({ onLogin }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate(); // Use the useNavigate hook
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:8000/login/', {
-                username,
-                password
+                username: username,
+                password: password,
             });
+            localStorage.setItem('token', response.data.access_token);
             onLogin(response.data.access_token);
+            navigate('/homepage'); // Use navigate for navigation
         } catch (error) {
-            setError('Invalid username or password');
+            if (error.response && error.response.status === 401) {
+                setError('Invalid username or password');
+            } else {
+                setError('An unexpected error occurred. Please try again later.');
+            }
         }
     };
 
-    return (
-        <div className="login-container">
+    // Function to navigate to the register page
+    const onShowRegister = () => navigate('/register');
 
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit} className="login-form">
-                <div>
-                    <label>Username:</label>
-                    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                </div>
-                <button type="submit" className="login-button">Login</button>
-                <div className="register-section">
-                    <span>You don't have an account?</span>
-                    <button onClick={onShowRegister} className="register-button">Register</button>
-                </div>
-            </form>
-            {error && <p className="error-message">{error}</p>}
-        </div>
+    return (
+        <>
+            <div className="background-image"></div>
+            <div className="login-container">
+                <h1>Login</h1>
+                <form onSubmit={handleSubmit} className="login-form">
+                    <div>
+                        <label>Username:</label>
+                        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                    </div>
+                    <div>
+                        <label>Password:</label>
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    </div>
+                    <button type="submit" className="login-button">Login</button>
+                    <div className="register-section">
+                        <span>You don't have an account?</span>
+                        <button type="button" onClick={onShowRegister} className="register-button">Register</button>
+                    </div>
+                </form>
+                {error && <p className="error-message" style={{ color: 'red' }}>{error}</p>}
+            </div>
+        </>
     );
 };
 
