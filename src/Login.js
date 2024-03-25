@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const Login = ({ onLogin }) => {
@@ -27,8 +27,7 @@ const Login = ({ onLogin }) => {
             }
         }
     };
-
-    // Function to navigate to the register page
+    
     const onShowRegister = () => navigate('/register');
 
     return (
