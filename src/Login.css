@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Adjust the colors as per your image */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .login-container {
@@ -11,10 +11,10 @@
   max-width: 400px;
   padding: 20px;
   margin: auto;
-  background: rgba(255, 255, 255, 0.85); /* Slightly transparent white */
+  background: rgba(255, 255, 255, 0.65);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  border-radius: 8px; /* More pronounced rounding */
-  backdrop-filter: blur(10px); /* Creates a frosted glass effect */
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
 }
 
 .login-form {
@@ -22,40 +22,51 @@
   flex-direction: column;
 }
 
-.login-form label,
-.login-form input,
-.login-form button {
-  margin-bottom: 10px;
+.login-form div {
+  display: flex;
+  align-items: center;
+}
+
+.login-container h1 {
+  text-align: center;
+}
+
+.login-form label{
+    min-width: 80px;
 }
 
 .login-form input {
+  flex-grow: 1;
+  margin-left: 10px;
   padding: 15px;
-  border: 1px solid transparent; /* remove the default border */
-  border-bottom: 2px solid #ddd; /* just a bottom border */
-  border-radius: 0; /* no border radius */
+  border: 1px solid transparent;
+  border-bottom: 2px solid #ddd;
+  border-radius: 0;
   background: transparent;
-  color: #fff; /* white text color */
+  color: #000; /* white text color */
 }
 
 .login-form button {
+  margin-top: 30px;
   padding: 15px;
-  background-color: #4dabf7; /* lighter shade for the button */
-  color: #fff; /* white text */
-  /* ... other styles remain the same */
+  background-color: #4dabf7;
+  color: #fff;
 }
 
 .login-form button:hover {
-  background-color: #0056b3; /* fallback for non-overlay */
+  background-color: #0056b3;
 }
 
 .register-section {
   text-align: center;
-  margin-top: 20px;
+  justify-content: center;
+  display: flex;
 }
 
 .register-section span {
-  margin-right: 10px;
+  margin-right: 20px;
   font-size: 0.9em;
+  margin-top: 25px;
 }
 
 .register-button {
@@ -67,10 +78,12 @@
   cursor: pointer;
   text-transform: uppercase;
   font-weight: bold;
+  text-transform: none;
+  border: 2px solid #000;
 }
 
 .register-button:hover {
-  background-color: #0056b3; /* A darker shade for the hover state */
+  background-color: #0056b3;
 }
 
 .background-image {
