@@ -132,7 +132,8 @@
   position: relative;
   width: 100%;
   margin: 0 -5px; /* Ajustați marginile negative dacă este necesar pentru a alinia la marginile exterioare */
-  overflow: hidden; /* Acesta va asigura că slide-urile suplimentare nu sunt vizibile în afara containerului */
+  overflow: visible; /* Acesta va asigura că slide-urile suplimentare nu sunt vizibile în afara containerului */
+  height: 500px;
 }
 
 .slides {
@@ -170,6 +171,8 @@
   padding: 10px;
   cursor: pointer;
   z-index: 1000;
+  width: 30px; /* Lățime fixă pentru săgeți */
+  height: 30px; /* Înălțime fixă pentru săgeți */
 }
 
 .arrow.prev {
