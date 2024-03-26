@@ -8,21 +8,26 @@ import slideShowImage4 from './img/p5.jpg';
 
 const Homepage = ({ logout }) => {
 
-  const imageLinks = [slideShowImage1, slideShowImage2, slideShowImage3, slideShowImage4];
+  const imageLinks = [
+      { src: slideShowImage1, url: '/guitars' },
+      { src: slideShowImage2, url: '/pianos' },
+      { src: slideShowImage3, url: '/tutorials' },
+      { src: slideShowImage4, url: 'sheets' }
+  ];
+
   const [currentIndices, setCurrentIndices] = useState([0, 1, 2]);
 
   const prevSlide = () => {
-  setCurrentIndices(currentIndices.map(index =>
-    (index - 1 + imageLinks.length) % imageLinks.length
-  ));
-};
+      setCurrentIndices(currentIndices.map(index =>
+        (index - 1 + imageLinks.length) % imageLinks.length
+      ));
+    };
 
-const nextSlide = () => {
-  setCurrentIndices(currentIndices.map(index =>
-    (index + 1) % imageLinks.length
-  ));
-};
-
+    const nextSlide = () => {
+      setCurrentIndices(currentIndices.map(index =>
+        (index + 1) % imageLinks.length
+      ));
+    };
 
   return (
       <div className="homepage">
@@ -47,9 +52,7 @@ const nextSlide = () => {
                   {currentIndices.map((index) => (
                       <a
                           key={index}
-                          href="#" // Acesta este locul unde veți adăuga linkul corespunzător fiecărei imagini
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          href={imageLinks[index].url}
                           className="slide-link"
                           style={{
                               margin: '0 5px',
@@ -59,7 +62,7 @@ const nextSlide = () => {
                           }}
                       >
                           <img
-                              src={imageLinks[index]}
+                              src={imageLinks[index].src}
                               alt={`Slide ${index + 1}`}
                               className="slide active"
                               style={{
