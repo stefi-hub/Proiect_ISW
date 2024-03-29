@@ -1,48 +1,71 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import './Homepage.css';
 import logoIcon from './img/p1.jpg';
 import slideShowImage1 from './img/p2.jpg';
 import slideShowImage2 from './img/p3.jpg';
 import slideShowImage3 from './img/p4.jpg';
 import slideShowImage4 from './img/p5.jpg';
+import stands from './img/stands.jpg';
+import headphones from './img/headphones.jpg';
+import pedalboard from './img/pedalboard.jpg';
+import strings from './img/strings.jpg';
+import bag from './img/bag.jpg';
+import charger from './img/charger.jpg';
 
 const Homepage = ({ logout }) => {
 
   const imageLinks = [
-      { src: slideShowImage1, url: '/guitars' },
-      { src: slideShowImage2, url: '/pianos' },
-      { src: slideShowImage3, url: '/tutorials' },
-      { src: slideShowImage4, url: 'sheets' }
+    { src: slideShowImage1, url: '/guitars' },
+    { src: slideShowImage2, url: '/pianos' },
+    { src: slideShowImage3, url: '/tutorials' },
+    { src: slideShowImage4, url: 'sheets' }
+  ];
+
+  const accessories = [
+    { src: stands, name: 'Stands' },
+    { src: headphones, name: 'Headphones' },
+    { src: pedalboard, name: 'Pedalboard' },
+    { src: strings, name: 'Strings' },
+    { src: bag, name: 'Bag' },
+    { src: charger, name: 'Charger' },
   ];
 
   const [currentIndices, setCurrentIndices] = useState([0, 1, 2]);
 
   const prevSlide = () => {
-      setCurrentIndices(currentIndices.map(index =>
-        (index - 1 + imageLinks.length) % imageLinks.length
-      ));
-    };
+    setCurrentIndices(currentIndices.map(index =>
+      (index - 1 + imageLinks.length) % imageLinks.length
+    ));
+  };
 
-    const nextSlide = () => {
-      setCurrentIndices(currentIndices.map(index =>
-        (index + 1) % imageLinks.length
-      ));
-    };
+  const nextSlide = () => {
+    setCurrentIndices(currentIndices.map(index =>
+      (index + 1) % imageLinks.length
+    ));
+  };
 
   return (
       <div className="homepage">
-
-          <div className="logo-section">
-              <img src={logoIcon} alt="Logo" className="logo"/>
+          <div className="homepage_background"></div>
+          <div className="content-center">
+              <div className="logo-section">
+                  <img src={logoIcon} alt="Logo" className="logo"/>
+              </div>
+              <div className="welcome-message">
+                  Hello, username!
+              </div>
           </div>
 
           <div className="topbar">
               <ul className="top-links">
-                  <li><a href="/contact" style={{color: 'white'}}>Contact us</a></li>
-                  <li><a href="/about" style={{color: 'white'}}>About us</a></li>
-                  <li><a href="/shops" style={{color: 'white'}}>Shops</a></li>
-                  <li><a href="/shoppingcart" style={{color: 'white'}}>Shopping Cart</a></li>
-                  <li><a href="/login" style={{color: 'white'}}>Logout</a></li>
+                  <li><a href="/contact" style={{color: 'white'}}>Contact us ✉️</a></li>
+                  <li><a href="/about" style={{color: 'white'}}>About us 📄</a></li>
+                  <li><a href="/shops" style={{color: 'white'}}>Shops 📌</a></li>
+                  <li><a href="/shoppingcart" style={{color: 'white'}}>Shopping Cart 🛒</a></li>
+                  <li><a href="/" style={{color: 'white'}}>Logout ↪</a></li>
               </ul>
           </div>
 
@@ -74,28 +97,61 @@ const Homepage = ({ logout }) => {
                       </a>
                   ))}
               </div>
-
-
               <button className="arrow next" onClick={nextSlide}>&gt;</button>
           </div>
 
-          <div className="Our-categories">
-
+          <div className="accessories-text">
+              Accessories
           </div>
 
-          <div className="Accesories">
-
+          <div className="accessories-description">
+              <div className="inner-description1">
+                Discover our select range of accessories, each built with craftsmanship and dedication. Their exceptional finishes are
+                the perfect choice for any musician.
+              </div>
           </div>
 
+          <div className="accessories-section">
+              {accessories.map((accessory, index) => (
+                  <div key={index} className="accessory-container">
+                      <img src={accessory.src} alt={accessory.name} className="accessory-image"/>
+                      <div className="accessory-name">
+                          <Link to={`/product/${accessory.name.toLowerCase()}`} className="accessory-link">
+                              {accessory.name}
+                          </Link>
+                      </div>
+                  </div>
+              ))}
+          </div>
+
+          <div className="social-media-text">
+              Follow us for more content!
+          </div>
           <div className="social-media">
-              <span>Twitter</span>
-              <span>Instagram</span>
-              <span>Facebook</span>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"
+                 className="social-media-link">
+                  <FontAwesomeIcon icon={faFacebookF}/> Facebook
+              </a>
+              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="social-media-link">
+                  <FontAwesomeIcon icon={faTwitter}/> Twitter
+              </a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"
+                 className="social-media-link">
+                  <FontAwesomeIcon icon={faInstagram}/> Instagram
+              </a>
           </div>
 
           <div className="points-of-interest">
-              <div className="point1">Subscribe to our Newsletter</div>
-              <div className="point2">Featured Images</div>
+              <div className="point-column">
+                  <div className="point">Terms and conditions</div>
+                  <div className="point">Blog</div>
+                  <div className="point">Cookie settings</div>
+              </div>
+              <div className="point-column">
+                  <div className="point">Warranty form</div>
+                  <div className="point">Confidentiality policy</div>
+                  <div className="point">© 2023–2024 Music Instruments</div>
+              </div>
           </div>
 
       </div>
