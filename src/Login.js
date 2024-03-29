@@ -32,6 +32,7 @@ const Login = ({ onLogin }) => {
 
     return (
         <>
+        <div className="login-page-container">
             <div className="background-image"></div>
             <div className="login-container">
                 <h1>Login</h1>
@@ -52,6 +53,7 @@ const Login = ({ onLogin }) => {
                 </form>
                 {error && <p className="error-message" style={{ color: 'red' }}>{error}</p>}
             </div>
+        </div>
         </>
     );
 };
