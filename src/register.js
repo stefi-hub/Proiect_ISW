@@ -6,37 +6,36 @@ const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isAdmin, setIsAdmin] = useState('');
-
   const [message, setMessage] = useState('');
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    await axios.post('http://localhost:8000/users/', {
-      username,
-      password,
-      is_admin: isAdmin ? 1 : 0,
-    });
-    setMessage('User registered successfully!');
-    setUsername('');
-    setPassword('');
-    setIsAdmin(false);
-  } catch (error) {
-    if (error.response) {
-      setMessage(error.response.data.detail || 'An unexpected error occurred.');
-    } else {
-      setMessage('An unexpected error occurred.');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('http://localhost:8000/users/', {
+        username,
+        password,
+        is_admin: isAdmin ? 1 : 0,
+      });
+      setMessage('User registered successfully!');
+      setUsername('');
+      setPassword('');
+      setIsAdmin(false);
+    } catch (error) {
+      if (error.response) {
+        setMessage(error.response.data.detail || 'An unexpected error occurred.');
+      } else {
+        setMessage('An unexpected error occurred.');
+      }
     }
-  }
-};
-
+  };
 
   return (
     <>
+    <div className="register-page-container">
         <div className="background-image"></div>
-        <div className="login-container"> {}
+        <div className="register-container"> {}
             <h1>Register</h1>
-            <form onSubmit={handleSubmit} className="login-form"> {}
+            <form onSubmit={handleSubmit} className="register-form"> {}
                 <div>
                     <label>Username:</label>
                     <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
@@ -56,10 +55,11 @@ const handleSubmit = async (e) => {
                         />
                     </label>
                 </div>
-                <button type="submit" className="login-button">Register</button> {}
+                <button type="submit" className="register-button">Register</button> {}
             </form>
             {message && <p className="error-message">{message}</p>} {}
         </div>
+    </div>
     </>
 );
 };
