@@ -6,10 +6,10 @@ import logoIcon from "./img/p1.jpg";
 
 
 
-const Guitars = () => {
+const About = () => {
   return (
-    <div className="guitarspage">
-      <div className="guitar_background"></div>
+    <div className="aboutpage">
+      <div className="about_background"></div>
       <div className="content-center1">
         <div className="logo-section">
           <img src={logoIcon} alt="Logo" className="logo"/>
@@ -100,4 +100,4 @@ const Guitars = () => {
   );
 }
 
-export default Guitars;
+export default About;
