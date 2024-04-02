@@ -5,9 +5,9 @@ Nume proiect: Music Shop
 Descriere: Magazin online de instrumente muzicale de unde poti accesa diferite modele de instrumente, accesorii, tutoriale si harta principalelor magazine fizice.
 
 Echipa este formata din:
-  -Serban Emanuel: Backend
+  -Serban Emanuel: Teamleader
   -Tohanean Ovidiu: Frontend
-  -Mitrofan Stefan: Teamleader
+  -Mitrofan Stefan: Backend
 
 Vom lucra in AGILE.
 
