@@ -1,15 +1,15 @@
-.guitarspage {
+.contactpage {
   position: relative;
   min-height: 100vh;
 }
 
-.guitar_background {
+.contact_background {
   position: absolute;
   top: 60px;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('img/contactback.jpg') no-repeat center center;
+  background: url('img/contback.jpg') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   z-index: -1;
@@ -70,7 +70,7 @@
   transition: text-decoration 0.3s ease;
 }
 
-.guitar-section-description {
+.contact-section-description {
   background-color: rgba(128, 128, 128, 0.4);
   margin: 50px 170px;
   text-align: center;
