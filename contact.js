@@ -2,27 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './contact.css';
 import logoIcon from "./img/p1.jpg";
-import electric from './img/electric.jpg';
-import acoustic from './img/acoustic.jpg';
-import clasic from './img/clasic.jpg';
-import bass from './img/bass.jpg';
-import ukulele from './img/ukulele.jpg';
-import banjo from './img/banjo.jpg';
 
-const Guitars = () => {
+const   Contact = () => {
 
-  const guitars = [
-    { src: electric, name: 'Electric' },
-    { src: acoustic, name: 'Acoustic' },
-    { src: clasic, name: 'Clasic' },
-    { src: bass, name: 'Bass' },
-    { src: ukulele, name: 'Ukulele' },
-    { src: banjo, name: 'Banjo' },
-  ];
+ 
 
   return (
-    <div className="guitarspage">
-      <div className="guitar_background"></div>
+    <div className="contactpage">
+      <div className="contact_background"></div>
       <div className="content-center1">
         <div className="logo-section">
           <img src={logoIcon} alt="Logo" className="logo"/>
@@ -42,7 +29,7 @@ const Guitars = () => {
         </ul>
       </div>
 
-      <div className="guitar-section-description">
+      <div className="contact-section-description">
         <div className="inner-description">
           Welcome to our Contact Us page! Have a question, feedback, or just want to say hello? We'd love to hear from you! Feel free to reach out using the contact form below, and our team will get back to you as soon as possible.
           Alternatively, you can find our contact information listed below if you prefer to connect with us via email or phone. We're here to assist you with anything you need.
@@ -94,4 +81,4 @@ const Guitars = () => {
   );
 }
 
-export default Guitars;
+export default Contact;
