@@ -1,0 +1,247 @@
+.guitarspage {
+  position: relative;
+  min-height: 100vh;
+}
+
+.guitar_background {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('img/contactback.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+.content-center1 {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-right: 30px;
+  margin-bottom: 32px;
+}
+
+.logo-section {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.welcome-message {
+  margin-left: auto;
+  text-align: right;
+}
+
+.topbar1 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: #000;
+}
+
+.top-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.top-links li {
+  padding: 10px;
+  margin: 0 120px;
+}
+
+.top-links a {
+  color: white;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+}
+
+.guitar-section-description {
+  background-color: rgba(128, 128, 128, 0.4);
+  margin: 50px 170px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  color: #DADADA;
+  font-size: 1.25rem;
+  border-radius: 4px;
+}
+
+.inner-description {
+  max-width: 50%;
+  margin: auto;
+}
+
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.column {
+  flex: 1;
+  margin: 0 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  text-align: center;
+}
+
+.column img {
+  max-width: 100%;
+  height: auto;
+}
+
+.column a {
+  display: block;
+  margin-top: 10px;
+  color: #000;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+.points-of-interest1 {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: #000;
+}
+
+.point-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.point {
+  color: white;
+  margin: 10px 0;
+  position: relative;
+  cursor: default;
+  text-align: center;
+}
+
+.point::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.point:hover::after {
+  width: 100%;
+  background-color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .points-of-interest {
+    flex-direction: column;
+  }
+  .point-column {
+    width: 100%;
+  }
+}
+
+.contact-form {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 170px;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #333;
+}
+
+.contact-info {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 170px;
+}
+
+.contact-info h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .contact-form,
+  .contact-info {
+    margin: 20px 10px;
+  }
+}
