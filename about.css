@@ -1,15 +1,15 @@
-.guitarspage {
+.aboutpage {
   position: relative;
   min-height: 100vh;
 }
 
-.guitar_background {
+.about_background {
   position: absolute;
   top: 60px;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('img/guitarbackground.jpg') no-repeat center center;
+  background: url('img/aboutback.jpg') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   z-index: -1;
@@ -112,7 +112,7 @@
 }
 
 .stats-section img {
-  max-width: 100%;
+  max-width: 95%;
   height: auto;
 }
 
