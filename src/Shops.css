@@ -1,0 +1,170 @@
+/* Shops.css */
+
+.mappage {
+  position: relative;
+  min-height: 100vh;
+}
+
+.map_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white; /* Set background color to white */
+  z-index: -1;
+}
+
+.content-center1 {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-right: 30px;
+  margin-bottom: 32px;
+}
+
+.logo-section {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.welcome-message {
+  margin-left: auto;
+  text-align: right;
+  color: white;
+}
+
+.topbar1 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: #000;
+}
+
+.top-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.top-links li {
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.top-links a {
+  color: white;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+}
+
+.points-of-interest1 {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: #000;
+}
+
+.point-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.point {
+  color: white;
+  margin: 10px 0;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+}
+
+.point::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.point:hover::after {
+  width: 100%;
+  background-color: white;
+}
+
+.shop-locations {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px; /* Add margin bottom */
+  margin-left:200px ;
+}
+
+.shop-column {
+  flex: 1; /* Equal width for all columns */
+  margin-right: 20px;
+}
+
+.shop-column:first-child {
+  margin-left: 0; /* Remove the margin-left for the first column */
+}
+
+.shop-column:last-child {
+  margin-right: 0;
+}
+
+.shop-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.shop-list li {
+  margin-bottom: 10px;
+}
+
+.shop-list li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.shop-list li a:hover {
+  color: #555;
+}
+
+.shop-photo {
+  max-width: 100px; /* Adjust max width of the shop photo */
+}
+
+@media (max-width: 768px) {
+  .content-center1 {
+    padding-right: 10px;
+  }
+
+  .top-links li {
+    margin: 0 10px;
+  }
+
+  .points-of-interest1 {
+    flex-direction: column;
+  }
+}
