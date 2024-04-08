@@ -8,6 +8,11 @@ import Guitars from './guitars';
 import Pianos from './pianos';
 import Tutorials from './tutorials';
 import Sheets from './sheets';
+import Contact from "./contact";
+import About from "./about";
+import ShoppingCart from "./shoppingcart";
+import Shops from "./Shops";
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -33,8 +38,12 @@ function App() {
           <Route path="/product/:productName" element={<ProductPage />} />
           <Route path="/guitars" element={<Guitars />} />
           <Route path="/pianos" element={<Pianos />} />
+           <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
           <Route path="/tutorials" element={<Tutorials />} />
+          <Route path="/shoppingcart" element={<ShoppingCart />} />
           <Route path="/sheets" element={<Sheets />} />
+          <Route path="/Shops" element={<Shops />} />
         </Routes>
       </div>
     </Router>
