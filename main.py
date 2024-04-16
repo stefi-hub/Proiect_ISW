@@ -104,14 +104,6 @@ async def login(user_login: UserLogin, db: db_dependency):
 async def options_login():
     return {"Allow": "POST, OPTIONS"}
 
-@app.post("/posts/", status_code=status.HTTP_201_CREATED)
-async def create_post(post: PostBase, db: db_dependency):
-    db_post = models.Post(**post.dict())
-    db.add(db_post)
-    db.commit()
-    db.refresh(db_post)
-    return db_post
-
 # When creating a new user, hash the password and store it in the password column
 @app.post("/users/", status_code=status.HTTP_201_CREATED)
 async def create_user(user: UserBase, db: db_dependency, is_admin: bool = False):
