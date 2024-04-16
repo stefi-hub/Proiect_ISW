@@ -4,25 +4,25 @@ import logoIcon from "./img/p1.jpg";
 import shopPhoto1 from "./img/sh1.jpg";
 import shopPhoto2 from "./img/sh2.jpg";
 import shopPhoto3 from "./img/sh3.jpg";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const MapPage = ({ userName }) => {
   const ourShops = [
-    { name: 'Guitar Shop Balcescu', url: '/https://www.mcmusic.ro/content/mcmusic-brasov' },
-    { name: 'M&C Musical', url: '/shopB' },
-    { name: 'Spinning - Music', url: '/shopC' },
+    { name: 'Guitar Shop Balcescu', url: 'https://www.mcmusic.ro/content/mcmusic-brasov' },
+    { name: 'M&C Musical', url: 'https://www.guitarshop.ro/articole/contact.html' },
+    { name: 'Spinning - Music', url: 'https://www.facebook.com/p/Spinning-Music-Shop-100054296060639/' },
   ];
 
   const supplierShops = [
-    { name: 'Normans Musical', url: '/https://www.mcmusic.ro/content/mcmusic-brasov' },
-    { name: 'National Music', url: '/shopB' },
-    { name: 'LMS Music', url: '/shopC' },
+    { name: 'Normans Musical', url: 'https://www.mcmusic.ro/content/mcmusic-brasov' },
+    { name: 'National Music', url: 'https://www.unmb.ro/en/' },
+    { name: 'LMS Music', url: 'https://evosound.com/' },
   ];
 
   const associatedShops = [
-    { name: 'Evosound', url: '/https://www.mcmusic.ro/content/mcmusic-brasov' },
-    { name: 'SoundStil', url: '/shopB' },
-    { name: 'Roton Music Brasov', url: '/shopC' },
+    { name: 'Evosound', url: 'https://www.mcmusic.ro/content/mcmusic-brasov' },
+    { name: 'SoundStil', url: 'https://www.soundstil.ro/' },
+    { name: 'Roton Music Brasov', url: 'https://roton.ro/about-us/' },
   ];
 
   return (
@@ -64,7 +64,7 @@ const MapPage = ({ userName }) => {
           <ul className="shop-list">
             {ourShops.map((shop, index) => (
               <li key={index}>
-                <a href={shop.url}>{shop.name}</a>
+                <a href={shop.url} target="_blank" rel="noopener noreferrer">{shop.name}</a>
               </li>
             ))}
           </ul>
@@ -75,7 +75,7 @@ const MapPage = ({ userName }) => {
           <ul className="shop-list">
             {supplierShops.map((shop, index) => (
               <li key={index}>
-                <a href={shop.url}>{shop.name}</a>
+                <a href={shop.url} target="_blank" rel="noopener noreferrer">{shop.name}</a>
               </li>
             ))}
           </ul>
@@ -86,7 +86,7 @@ const MapPage = ({ userName }) => {
           <ul className="shop-list">
             {associatedShops.map((shop, index) => (
               <li key={index}>
-                <a href={shop.url}>{shop.name}</a>
+                <a href={shop.url} target="_blank" rel="noopener noreferrer">{shop.name}</a>
               </li>
             ))}
           </ul>
