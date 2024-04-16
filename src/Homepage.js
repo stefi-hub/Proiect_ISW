@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import './Homepage.css';
@@ -54,7 +54,7 @@ const Homepage = ({ userName }) => {
                   <li><a href="/contact" style={{color: 'white'}}>Contact us ✉️</a></li>
                   <li><a href="/about" style={{color: 'white'}}>About us 📄</a></li>
                   <li><a href="/shops" style={{color: 'white'}}>Shops 📌</a></li>
-                  <li><a href="/shoppingcart" style={{color: 'white'}}>Shopping Cart 🛒</a></li>
+                  <li><NavLink to="/shoppingcart" style={{color: 'white'}}>Shopping Cart 🛒</NavLink></li>
                   <li><a href="/" style={{color: 'white'}}>Logout ↪</a></li>
               </ul>
           </div>
