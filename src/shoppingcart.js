@@ -44,7 +44,6 @@ const ShoppingCart = ({ userName }) => {
     }
   };
 
-  
   const [freeShipping, setFreeShipping] = useState(totalPrice >= 1000);
 
   return (
@@ -153,13 +152,6 @@ const ShoppingCart = ({ userName }) => {
                   <div className="product-details">
                     <div className="product-name">{product.name}</div>
                     <div className="product-price">${product.price}</div>
-                    <button
-                      className="add-to-cart-btn"
-                      onClick={() => addToCart(product.id)}
-                    >
-                      Add to Cart 🛒
-                    </button>{" "}
-                    {/* Add the product ID to the cart */}
                   </div>
                 </Link>
               </div>
